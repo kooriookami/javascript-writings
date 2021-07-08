@@ -10,10 +10,10 @@ class Kue {
     initParams({data, methods}) {
         const _data = typeof data === 'object' ? data : {};
         const _methods = typeof methods === 'object' ? methods : {};
-        const obj = {}
-        Object.keys(_data).forEach((k) => obj[k] = _data[k])
-        Object.keys(_methods).forEach((k) => obj[k] = _methods[k])
-        this.instance = this.proxyData(obj);
+        this.instance = this.proxyData({
+            ..._data,
+            ..._methods
+        });
     }
 
     // 代理数据
