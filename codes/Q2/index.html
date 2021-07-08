@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Kue.js"></script>
+</head>
+<body>
+<input type="text" k-model="value">
+<span k-bind="value"></span>
+<button k-click="handleClick">点击改变值</button>
+<button k-click="clearInput">点击清空值</button>
+
+<script>
+    new Kue({
+        data: {
+            msg: 'msg',
+            value: '当前输入框值'
+        },
+        methods: {
+            handleClick() {
+                this.value = this.msg;
+            },
+            clearInput() {
+                this.value = '';
+            }
+        }
+    });
+</script>
+</body>
+</html>
