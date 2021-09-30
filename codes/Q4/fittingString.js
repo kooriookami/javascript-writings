@@ -15,7 +15,7 @@ const fittingString = (string, maxWidth, fontSize, maxLine) => {
             currentWidth = 0;
         }
     });
-    if (lfList.length > maxLine) {
+    if (lfList.length >= maxLine) {
         stringList.splice(lfList[maxLine - 1]);
         lfList.splice(maxLine - 1);
         ellipsis = true;
